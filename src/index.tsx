@@ -11,6 +11,8 @@ import {
 import UsersScreen from './screens/UsersScreen';
 import UserFormProfile from './screens/UserFormProfileScreen';
 import SavedUsersScreen from './screens/SavedUsersScreen';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 const router = createBrowserRouter([
   {
@@ -35,9 +37,9 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
       <RouterProvider router={router} />
-  </React.StrictMode>
+      </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
